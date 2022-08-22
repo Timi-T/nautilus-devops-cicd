@@ -2,7 +2,6 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Node.js CI
-
 on:
   push:
     branches: [ "master" ]
@@ -34,4 +33,4 @@ jobs:
           #cache-dependency-path: './simple-app/package-lock.json'
       - run: |
           npm i
-          npm run build --if-present
+          npm run start
