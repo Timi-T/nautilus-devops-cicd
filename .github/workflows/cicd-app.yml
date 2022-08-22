@@ -30,4 +30,4 @@ jobs:
           #cache: 'npm'
           #cache-dependency-path: './simple-app/package-lock.json'
       - run: |
-          npm run start
+          npm start
