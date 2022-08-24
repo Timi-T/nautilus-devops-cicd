@@ -12,7 +12,7 @@ jobs:
         working-directory: ./simple-app/
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [16.x]
     steps:
       - name: Checkout code to temp storage
         uses: actions/checkout@v3
@@ -36,7 +36,7 @@ jobs:
           TARGET: ${{ secrets.REMOTE_TARGET }}
           EXCLUDE: "/dist/, /node_modules/"
       - name: ssh into server and start application
-        #if: ${{ success() }}
+        if: ${{ success() }}
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
